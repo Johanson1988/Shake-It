@@ -11,11 +11,11 @@ const cleanInnerHtml = (el) => {
     while (el.firstChild) 
     { el.removeChild(el.firstChild)}};
 
-const  getCocktailsByLiquor = (name) => {
-    axios.get(baseUrl + filter + '?i=' + name)
+const getCocktailsByIngredient = (name) => {
+    return axios.get(baseUrl + filter + '?i=' + name)
         .then( responseFromAPI => {
             const {data} = responseFromAPI;
-            showCocktails(data.drinks); 
+            return data;
         })
         .catch( (err) => console.log(err));
 }
@@ -28,7 +28,12 @@ submitButton.addEventListener('click', (e) =>{
     e.preventDefault();
     const name = document.querySelector('#input-name').value;
     const ingredient1 = document.querySelector('#ingredient-1').value;
-    getCocktailsByLiquor(name);
+    const pr1 = getCocktailsByIngredient(name);
+    const pr2 = getCocktailsByIngredient(ingredient1);
+    Promise.all([pr1,pr2])
+        .then( (result) => {
+            console.log(result);
+        });
 })
 
 function showCocktails (cocktails) {
