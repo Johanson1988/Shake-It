@@ -17,16 +17,16 @@ The app allows you to feel like an actual bartender. You just need to introduce 
 
 <br>
 ## File Structure
-
-├── .gitignore
-├── index.html
-├── cocktail-card.html
-├── styles.css
-
-├── scripts
-|   └── index.js
-|   └── cocktail-card.js
-└── README.MD
+...
+├── .gitignore<br>
+├── index.html<br>
+├── cocktail-card.html<br>
+├── styles.css<br>
+├── scripts<br>
+|   └── index.js<br>
+|   └── cocktail-card.js<br>
+└── README.MD<br>
+...
 <br>
 
 
