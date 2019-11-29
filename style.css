@@ -21,6 +21,11 @@ body {
   background-image: url('./image/background.png');
 }
 
+h3{
+  font-size: 1.4em;
+  text-align: center;
+}
+
 h4 {
   color: white;
 }
@@ -67,4 +72,14 @@ h4 {
 .card-body li {
   background-image: url('./image/background.png');
   font-family: 'Open Sans', sans-serif;
+}
+
+
+.ingredients-class img {
+  height: 6vh;
+}
+
+.card-title {
+  background-image: url('./image/background.png');
+  color: #ffffff;
 }

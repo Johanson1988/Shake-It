@@ -26,34 +26,34 @@
         <input class="form-control mt-3 mt-mr-sm-2" id='input-name' type="text" placeholder="Liquor" name='name' aria-label="Search">
         <h4 class="form-title mt-3" for="ingredient-1">Add one ingredient</h4>
         <input class="form-control mt-3" id='ingredient-1' type="text" name='ingredient' placeholder="Ingredient">
-        <button id='form-button' class="btn btn-success mt-3 mb-3 my-2 my-0 btn-block">Submit</button>
+        <button id='form-button' class="btn btn-success mt-3 mb-3 my-2 my-0 btn-block">Find cocktail</button>
     </form>
   </div> 
 
 
-    <div class="d-flex flex-wrap">
+    <!-- <div class="d-flex flex-wrap">
     <div class="ml-5 mr-5 mt-3 card" id='results-container'>
             <div class="card-group">
-        <h3 class="card-title pr-5 pl-5 text-center">Those are the cocktails you can prepare:</h3>
-    </div>
-</div>
+        
+    </div> -->
 </div>
 
-<section id='random-container'>
-  <h2>This is the cocktail of the day</h2>
+<section class="card-group pt-5 mb-5" id='random-container'>
+    <h4 class="card-title text-center">This is the cocktail of the day</h4>
 </section>
 
+</div>
 <!-- fixed-bottom navbar -->
     <nav class="navbar fixed-bottom navbar-expand-lg navbar-light bg-light pt-0 pb-0 mt-0 mb-0">
             <div class="container">
-              <a class="nav-item nav-link active" href="/meal-events">
-                <i class="material-icons">restaurant_menu</i><span class="sr-only">(current)</span>
+              <a class="nav-item nav-link active" href="/index.html">
+                <i class="material-icons">home</i><span class="sr-only">(current)</span>
               </a>
-              <a class="nav-item nav-link active" href="/profile/{{userInfo._id}}/events">
-                <i class="material-icons">calendar_today</i><span class="sr-only">(current)</span>
+              <a class="nav-item nav-link active" href="/index.html">
+                <i class="material-icons">search</i><span class="sr-only">(current)</span>
               </a>
-              <a class="nav-item nav-link active" href="/signout">
-                <i class="material-icons">exit_to_app</i><span class="sr-only">(current)</span>
+              <a class="nav-item nav-link active" href="/index.html">
+                <i class="material-icons">local_drink</i><span class="sr-only">(current)</span>
               </a>
             </div>
           </nav>

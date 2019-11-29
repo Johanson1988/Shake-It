@@ -45,12 +45,19 @@ submitButton.addEventListener('click', (e) =>{
                     }
                 }
             }
+            // const message = document.createElement('p');
+            // message.innerHTML = 'Those are the cocktails you can prepare:';
+            // // message.classList.add("card-title pr-5 pl-5 mb-0 text-center")
+            // resultsContainer.insertBefore(message,resultsContainer.firstChild);
+
             showCocktails(finalDrinksList);
                     
             })
         
         
 })
+
+// <h3 class="card-title pr-5 pl-5 mb-0 text-center">Those are the cocktails you can prepare:</h3>
 
 function showCocktails (cocktails) {
     cleanInnerHtml(resultsContainer);
@@ -73,13 +80,14 @@ function showCocktails (cocktails) {
 function randomCocktail () {
     return axios.get(baseUrl + random)
         .then((randomCocktail) => {
+            const cocktailPicture = document.createElement('img');
+            cocktailPicture.classList.add("card-img-top");
+            cocktailPicture.src = randomCocktail.data.drinks[0].strDrinkThumb;
+            randomContainer.appendChild(cocktailPicture);
             console.log('random',randomCocktail);
             const cocktailName = document.createElement('h3');
             cocktailName.innerHTML = `<a class="list-group-item" href="cocktail-card.html"><h2>${randomCocktail.data.drinks[0].strDrink}</h2></a>`
             randomContainer.appendChild(cocktailName);
-            const cocktailPicture = document.createElement('img');
-            cocktailPicture.src = randomCocktail.data.drinks[0].strDrinkThumb;
-            randomContainer.appendChild(cocktailPicture);
             cocktailName.addEventListener('click', () => {
                 localStorage.setItem("cocktail-id", 'cocktail-' + randomCocktail.data.drinks[0].idDrink);  
             })
