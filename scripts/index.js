@@ -52,7 +52,7 @@ submitButton.addEventListener('click', (e) =>{
 function showCocktails (cocktails) {
     cleanInnerHtml(resultsContainer);
     const cocktailsList = document.createElement('ul');
-    cocktails.forEach((cocktail,index) =>{
+    cocktails.forEach(cocktail =>{
         let liElement = document.createElement('li');
         liElement.setAttribute('id','cocktail-' + cocktail.idDrink);
         liElement.innerHTML = `
