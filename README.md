@@ -16,8 +16,8 @@ The app allows you to feel like an actual bartender. You just need to introduce 
 - **detailview** - As a user I want to be able to see the detail of my search, as categories, ingredients, needed materials.
 
 <br>
-## File Structure
-...
+## File Structure<br>
+```
 ├── .gitignore<br>
 ├── index.html<br>
 ├── cocktail-card.html<br>
@@ -26,7 +26,7 @@ The app allows you to feel like an actual bartender. You just need to introduce 
 |   └── index.js<br>
 |   └── cocktail-card.js<br>
 └── README.MD<br>
-...
+```
 <br>
 
 
