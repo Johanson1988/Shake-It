@@ -2,23 +2,64 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Cocktails</title>
+    <title>Shake It</title>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+      <!-- google icon material -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="style.css">
 
 </head>
 <body>
+
+
+            <h1>SHAKE IT</h1>
+    
+
     <form>
-        <label for="name">What liquor do you have at home?</label>
-        <input id='input-name' type="text" name='name'>
-        <button id='form-button'>Submit</button>
+            <div class="form-group">
+            <label for="name">What liquor do you have at home?</label>
+        <input id='input-name' class="form-control mr-sm-2" type="text" placeholder="Search" name='name' aria-label="Search">
+        <button id='form-button' class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </div>  
     </form>
 
     <div id='results-container'>
         <p>Those are the cocktails you can prepare:</p>
     </div>
 
+
+<!-- fixed-bottom navbar -->
+    <nav class="navbar fixed-bottom navbar-expand-lg navbar-light bg-light pt-0 pb-0 mt-0 mb-0">
+            <div class="container">
+              <a class="nav-item nav-link active" href="/meal-events">
+                <i class="material-icons">restaurant_menu</i><span class="sr-only">(current)</span>
+              </a>
+              <a class="nav-item nav-link active" href="/profile/{{userInfo._id}}/events">
+                <i class="material-icons">calendar_today</i><span class="sr-only">(current)</span>
+              </a>
+              <a class="navbar-brand" href="/meal-events/create">
+                <i id="plus-icon" class="material-icons">add_circle</i>
+              </a>
+              <a class="nav-item nav-link active" href="/profile/{{userInfo._id}}">
+                <i class="material-icons">person</i><span class="sr-only">(current)</span>
+              </a>
+              <a class="nav-item nav-link active" href="/signout">
+                <i class="material-icons">exit_to_app</i><span class="sr-only">(current)</span>
+              </a>
+            </div>
+          </nav>
+
+
     <script src="scripts/index.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
 </body>
 </html>
