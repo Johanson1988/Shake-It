@@ -72,12 +72,19 @@ h4 {
 .card-body li {
   background-image: url('./image/background.png');
   font-family: 'Open Sans', sans-serif;
+ 
 }
 
+.ingredients-class {
+  display: flex;
+  justify-content: space-between;
+}
 
 .ingredients-class img {
   height: 6vh;
 }
+
+
 
 .card-title {
   background-image: url('./image/background.png');
