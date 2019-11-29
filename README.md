@@ -54,7 +54,7 @@ The url to your repository and to your deployed project
 
 [Repository Link](https://github.com/barbara-carnieri/Shake-It.git)
 
-[Deploy Link]()
+[Deploy Link](https://barbara-carnieri.github.io/Shake-It/)
 
 
 <br>
