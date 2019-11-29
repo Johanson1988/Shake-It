@@ -1,6 +1,8 @@
 
 const baseUrl = 'https://www.thecocktaildb.com/api/json/v1/1/';
 const resultsContainer = document.querySelector('#results-container');
+const randomContainer = document.querySelector('#random-container');
+
 
 const search = 'search.php';
 const filter = 'filter.php';
@@ -26,6 +28,7 @@ const submitButton = document.querySelector('#form-button');
 
 submitButton.addEventListener('click', (e) =>{
     e.preventDefault();
+    cleanInnerHtml(randomContainer);
     const name = document.querySelector('#input-name').value;
     const ingredient1 = document.querySelector('#ingredient-1').value;
     const pr1 = getCocktailsByIngredient(name);
@@ -52,7 +55,7 @@ submitButton.addEventListener('click', (e) =>{
 function showCocktails (cocktails) {
     cleanInnerHtml(resultsContainer);
     const cocktailsList = document.createElement('ul');
-    cocktails.forEach((cocktail,index) =>{
+    cocktails.forEach(cocktail =>{
         let liElement = document.createElement('li');
         liElement.setAttribute('id','cocktail-' + cocktail.idDrink);
         liElement.innerHTML = `
@@ -67,4 +70,21 @@ function showCocktails (cocktails) {
     resultsContainer.appendChild(cocktailsList);
 }
 
+function randomCocktail () {
+    return axios.get(baseUrl + random)
+        .then((randomCocktail) => {
+            console.log('random',randomCocktail);
+            const cocktailName = document.createElement('h3');
+            cocktailName.innerHTML = `<a class="list-group-item" href="cocktail-card.html"><h2>${randomCocktail.data.drinks[0].strDrink}</h2></a>`
+            randomContainer.appendChild(cocktailName);
+            const cocktailPicture = document.createElement('img');
+            cocktailPicture.src = randomCocktail.data.drinks[0].strDrinkThumb;
+            randomContainer.appendChild(cocktailPicture);
+            cocktailName.addEventListener('click', () => {
+                localStorage.setItem("cocktail-id", 'cocktail-' + randomCocktail.data.drinks[0].idDrink);  
+            })
+        })
+        .catch(err => console.error(err));
+}
 
+randomCocktail();

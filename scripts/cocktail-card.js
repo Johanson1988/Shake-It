@@ -32,10 +32,14 @@ const getCocktailById = (id) => {
             `
 
             ingredients.forEach(ingredient => {
-                var liElement = document.createElement('li');
+                const liElement = document.createElement('li');
                 liElement.classList.add('ingredients-class', 'list-group-item');
                 liElement.innerHTML = ingredient;
                 ingredientsList.appendChild(liElement);
+                const ingredientImage = document.createElement('img');
+                ingredientImage.src = `https://www.thecocktaildb.com/images/ingredients/${ingredient}.png`;
+                liElement.appendChild(ingredientImage);
+                
             })
             const instructions = cocktail.strInstructions;
             instructionsContainer.innerHTML = instructions;
