@@ -15,20 +15,7 @@ const  getCocktailsByLiquor = (name) => {
     axios.get(baseUrl + filter + '?i=' + name)
         .then( responseFromAPI => {
             const {data} = responseFromAPI;
-            console.log(data);
-            cleanInnerHtml(resultsContainer);
-            const cocktailsList = document.createElement('ul');
-            data.drinks.forEach((cocktail,index) =>{
-                let liElement = document.createElement('li');
-                liElement.setAttribute('id','cocktail-' + cocktail.idDrink);
-                liElement.innerHTML = `<a href="cocktail-card.html"><h2>${cocktail.strDrink}</h2></a>`
-                cocktailsList.appendChild(liElement);
-                liElement.addEventListener('click', () =>{
-                    localStorage.setItem("cocktail-id", liElement.getAttribute('id'));
-                })
-            })
-            resultsContainer.appendChild(cocktailsList);
-            
+            showCocktails(data.drinks); 
         })
         .catch( (err) => console.log(err));
 }
@@ -40,9 +27,23 @@ const submitButton = document.querySelector('#form-button');
 submitButton.addEventListener('click', (e) =>{
     e.preventDefault();
     const name = document.querySelector('#input-name').value;
+    const ingredient1 = document.querySelector('#ingredient-1').value;
     getCocktailsByLiquor(name);
 })
 
-
+function showCocktails (cocktails) {
+    cleanInnerHtml(resultsContainer);
+    const cocktailsList = document.createElement('ul');
+    cocktails.forEach((cocktail,index) =>{
+        let liElement = document.createElement('li');
+        liElement.setAttribute('id','cocktail-' + cocktail.idDrink);
+        liElement.innerHTML = `<a href="cocktail-card.html"><h2>${cocktail.strDrink}</h2></a>`
+        cocktailsList.appendChild(liElement);
+        liElement.addEventListener('click', () =>{
+            localStorage.setItem("cocktail-id", liElement.getAttribute('id'));
+        })
+    })
+    resultsContainer.appendChild(cocktailsList);
+}
 
 
