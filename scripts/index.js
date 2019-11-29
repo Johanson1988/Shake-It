@@ -32,8 +32,21 @@ submitButton.addEventListener('click', (e) =>{
     const pr2 = getCocktailsByIngredient(ingredient1);
     Promise.all([pr1,pr2])
         .then( (result) => {
-            console.log(result);
-        });
+            const finalDrinksList = [];
+            const drinksListIng1 = result[0].drinks;
+            const drinksListIng2 = result[1].drinks;
+            for(let i=0;i<drinksListIng1.length;i++) {
+                for (let j=0;j<drinksListIng2.length;j++) {
+                    if (drinksListIng1[i].idDrink === drinksListIng2[j].idDrink) { 
+                        finalDrinksList.push(drinksListIng1[i]);
+                    }
+                }
+            }
+            showCocktails(finalDrinksList);
+                    
+            })
+        
+        
 })
 
 function showCocktails (cocktails) {
