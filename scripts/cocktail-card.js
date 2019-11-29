@@ -13,7 +13,12 @@ const getCocktailById = (id) => {
         .then ( responseFromAPI => {
             const {data} = responseFromAPI;
             const cocktail = data.drinks[0];
-            console.log(cocktail);
+            const ingredients = [];
+            let i = 1;
+            while (cocktail['strIngredient' + i] !== null) {
+                console.log(cocktail['strIngredient' + i]);
+                i++;
+            }
             cocktailContainer.innerHTML = `
             <p>${cocktail.strDrink}</p>
             <p>${cocktail.strGlass}</p>
