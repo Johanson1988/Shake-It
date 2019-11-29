@@ -72,12 +72,15 @@ function randomCocktail () {
         .then((randomCocktail) => {
             console.log('random',randomCocktail);
             const cocktailName = document.createElement('h3');
-            cocktailName.innerHTML = randomCocktail.data.drinks[0].strDrink;
+            cocktailName.innerHTML = `<a class="list-group-item" href="cocktail-card.html"><h2>${randomCocktail.data.drinks[0].strDrink}</h2></a>`
             const randomContainer = document.querySelector('#random-container');
             randomContainer.appendChild(cocktailName);
             const cocktailPicture = document.createElement('img');
             cocktailPicture.src = randomCocktail.data.drinks[0].strDrinkThumb;
             randomContainer.appendChild(cocktailPicture);
+            cocktailName.addEventListener('click', () => {
+                localStorage.setItem("cocktail-id", 'cocktail-' + randomCocktail.data.drinks[0].idDrink);  
+            })
         })
         .catch(err => console.error(err));
 }
