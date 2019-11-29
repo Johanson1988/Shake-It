@@ -25,7 +25,6 @@ const  getCocktailsByLiquor = (name) => {
                 cocktailsList.appendChild(liElement);
                 liElement.addEventListener('click', () =>{
                     localStorage.setItem("cocktail-id", liElement.getAttribute('id'));
-                    console.log('id saved');
                 })
             })
             resultsContainer.appendChild(cocktailsList);

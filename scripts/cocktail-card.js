@@ -1,8 +1,9 @@
 
 const cocktailId = localStorage.getItem('cocktail-id').slice(9);
-console.log(cocktailId);
 const baseUrl = 'https://www.thecocktaildb.com/api/json/v1/1/';
-const cocktailContainer = document.querySelector('#cocktail-container')
+const cocktailContainer = document.querySelector('#cocktail-info-container');
+const ingredientsList= document.querySelector('#ingredients-list');
+const instructionsContainer = document.querySelector('#instructions-container');
 
 const lookup = 'lookup.php';
 
@@ -15,8 +16,9 @@ const getCocktailById = (id) => {
             const cocktail = data.drinks[0];
             const ingredients = [];
             let i = 1;
+            console.log(cocktail);
             while (cocktail['strIngredient' + i] !== null) {
-                console.log(cocktail['strIngredient' + i]);
+                ingredients.push(cocktail['strIngredient' + i]);
                 i++;
             }
             cocktailContainer.innerHTML = `
@@ -25,6 +27,15 @@ const getCocktailById = (id) => {
             <p>${cocktail.strAlcoholic}</p>
             <img src="${cocktail.strDrinkThumb}" alt='cocktail picture'>
             `
+
+            ingredients.forEach(ingredient => {
+                var liElement = document.createElement('li');
+                liElement.classList.add('ingredients-class');
+                liElement.innerHTML = ingredient;
+                ingredientsList.appendChild(liElement);
+            })
+            const instructions = cocktail.strInstructions;
+            instructionsContainer.innerHTML = instructions;
 
         })
 }
