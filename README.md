@@ -5,8 +5,7 @@
 
 ## Description
 
-Shake It is a plataform to search for cocktail recipes. 
-You can make your search by name, ingredients and categories. And also you can check the cocktail of the day.
+The app allows you to feel like an actual bartender. You just need to introduce any kind of alcohol and one ingredient, and the app will tell you what cocktails you can use. You will also see detailed preparation details and you can see the cocktail of the day.
 
 <br>
 
@@ -16,21 +15,28 @@ You can make your search by name, ingredients and categories. And also you can c
 - **filterview** - As a user I want to see the list of filtered cocktails based my search keyword.
 - **detailview** - As a user I want to be able to see the detail of my search, as categories, ingredients, needed materials.
 
+<br>
+## File Structure
 
+├── .gitignore
+├── index.html
+├── cocktail-card.html
+├── styles.css
+
+├── scripts
+|   └── index.js
+|   └── cocktail-card.js
+└── README.MD
 <br>
 
 
 
-## API :
+## API : www.thecocktaildb.com
 
 
 | **Method** | **Description**|
-|---|---|                             
-<!-- | `GET`      | Main page route.  Renders home `index` view.        
-| `POST`     | Sends Login form data to the server. Redirects to the `show-all` view (url: /meal-events).        
-| `PUT`   |  Private route. Updates the existing event from the current user in the DB. Redirects to the `user-views/myevents` view.
-| `DELETE`   |  Private route. Deletes the existing event from the current user. Redirects to the `meal-views/show-all` view (url: /meal-events).                                    -->
 
+ `GET`      | Get cocktails list by name       
 
 <br>
 
