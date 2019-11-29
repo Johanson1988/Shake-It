@@ -1,6 +1,8 @@
 
 const baseUrl = 'https://www.thecocktaildb.com/api/json/v1/1/';
 const resultsContainer = document.querySelector('#results-container');
+const randomContainer = document.querySelector('#random-container');
+
 
 const search = 'search.php';
 const filter = 'filter.php';
@@ -26,6 +28,7 @@ const submitButton = document.querySelector('#form-button');
 
 submitButton.addEventListener('click', (e) =>{
     e.preventDefault();
+    cleanInnerHtml(randomContainer);
     const name = document.querySelector('#input-name').value;
     const ingredient1 = document.querySelector('#ingredient-1').value;
     const pr1 = getCocktailsByIngredient(name);
@@ -73,7 +76,6 @@ function randomCocktail () {
             console.log('random',randomCocktail);
             const cocktailName = document.createElement('h3');
             cocktailName.innerHTML = `<a class="list-group-item" href="cocktail-card.html"><h2>${randomCocktail.data.drinks[0].strDrink}</h2></a>`
-            const randomContainer = document.querySelector('#random-container');
             randomContainer.appendChild(cocktailName);
             const cocktailPicture = document.createElement('img');
             cocktailPicture.src = randomCocktail.data.drinks[0].strDrinkThumb;
