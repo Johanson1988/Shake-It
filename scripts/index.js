@@ -67,4 +67,19 @@ function showCocktails (cocktails) {
     resultsContainer.appendChild(cocktailsList);
 }
 
+function randomCocktail () {
+    return axios.get(baseUrl + random)
+        .then((randomCocktail) => {
+            console.log('random',randomCocktail);
+            const cocktailName = document.createElement('h3');
+            cocktailName.innerHTML = randomCocktail.data.drinks[0].strDrink;
+            const randomContainer = document.querySelector('#random-container');
+            randomContainer.appendChild(cocktailName);
+            const cocktailPicture = document.createElement('img');
+            cocktailPicture.src = randomCocktail.data.drinks[0].strDrinkThumb;
+            randomContainer.appendChild(cocktailPicture);
+        })
+        .catch(err => console.error(err));
+}
 
+randomCocktail();
