@@ -1,9 +1,70 @@
+* {
+  font-family: 'Noto Sans', sans-serif;
+  /* font-family: 'Sue Ellen Francisco', cursive; */
+}
+
 ul {
   list-style-type: none;
   padding: 10px;
 }
 
+.container-fluid {
+  margin: 0;
+}
+
 h1 {
   font-size: 2.4em;
   text-align: center;
+}
+
+body {
+  background-image: url('./image/background.png');
+}
+
+h4 {
+  color: white;
+}
+
+.btn-success {
+  background-color: rgb(228, 221, 20);
+  border: rgb(228, 221, 20);
+}
+
+
+.card-body:first-child {
+  border-bottom: 0;
+  border-top: solid 1.2vw;
+  border-right:solid 1.2vw;
+  border-left: solid 1.2vw;
+  border-color: #ffffff;
+  background-image: url('./image/background.png');
+  color: #ffffff;
+  font-family: 'Open Sans', sans-serif;
+}
+​
+.card-body:nth-child(2) {
+  border-bottom: 0;
+  border-top: 0;
+  border-right:solid 1.2vw;
+  border-left: solid 1.2vw;
+  border-color: #ffffff;
+  background-image: url('./image/background.png');
+  color: #ffffff;
+  font-family: 'Open Sans', sans-serif;
+}
+​
+.card-body:last-child {
+  border-bottom: solid 1.2vw;
+  border-top: 0;
+  border-right:solid 1.2vw;
+  border-left: solid 1.2vw;
+  border-color: #ffffff;
+  background-image: url('./image/background.png');
+  color: #ffffff;
+  font-family: 'Open Sans', sans-serif;
+}
+​
+.card-body li {
+  background-image: url('./image/background.png');
+  font-family: 'Open Sans', sans-serif;
 }
