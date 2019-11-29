@@ -21,17 +21,20 @@
     
 
     <form>
-            <div class="form-group">
+            <div class="form-group pl-5 pr-5">
             <label for="name">What liquor do you have at home?</label>
         <input id='input-name' class="form-control mr-sm-2" type="text" placeholder="Search" name='name' aria-label="Search">
         <button id='form-button' class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </div>  
     </form>
 
-    <div id='results-container'>
+    <div class="d-flex flex-wrap">
+    <div class="ml-5 mr-5 card" id='results-container'>
+            <div class="card-group">
         <p>Those are the cocktails you can prepare:</p>
     </div>
-
+</div>
+</div>
 
 <!-- fixed-bottom navbar -->
     <nav class="navbar fixed-bottom navbar-expand-lg navbar-light bg-light pt-0 pb-0 mt-0 mb-0">

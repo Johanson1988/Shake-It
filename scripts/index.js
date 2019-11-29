@@ -21,7 +21,10 @@ const  getCocktailsByLiquor = (name) => {
             data.drinks.forEach((cocktail,index) =>{
                 let liElement = document.createElement('li');
                 liElement.setAttribute('id','cocktail-' + cocktail.idDrink);
-                liElement.innerHTML = `<a href="cocktail-card.html"><h2>${cocktail.strDrink}</h2></a>`
+                liElement.innerHTML = `
+                <img id='img-drink' class="card-img-top" src="${cocktail.strDrinkThumb}" alt='cocktail picture'>
+                <a class="list-group-item" href="cocktail-card.html"><h2>${cocktail.strDrink}</h2></a>
+                `
                 cocktailsList.appendChild(liElement);
                 liElement.addEventListener('click', () =>{
                     localStorage.setItem("cocktail-id", liElement.getAttribute('id'));

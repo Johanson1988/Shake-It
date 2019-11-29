@@ -22,16 +22,18 @@ const getCocktailById = (id) => {
                 i++;
             }
             cocktailContainer.innerHTML = `
-            <p>${cocktail.strDrink}</p>
-            <p>${cocktail.strGlass}</p>
-            <p>${cocktail.strAlcoholic}</p>
-            <p>${cocktail.strCategory}</p>
-            <img src="${cocktail.strDrinkThumb}" alt='cocktail picture'>
+            
+            <h3 id='drink' class="card-title">${cocktail.strDrink}</h3>
+            <p id='glass' class="card-text">Glass Type: ${cocktail.strGlass}</p>
+            <p id='alcoholic' class="card-text">Alcoholic: ${cocktail.strAlcoholic}</p>
+            <p id='category' class="card-text">Category: ${cocktail.strCategory}</p>
+            <img id='img-drink' class="card-img-top" src="${cocktail.strDrinkThumb}" alt='cocktail picture'>
+            
             `
 
             ingredients.forEach(ingredient => {
                 var liElement = document.createElement('li');
-                liElement.classList.add('ingredients-class');
+                liElement.classList.add('ingredients-class', 'list-group-item');
                 liElement.innerHTML = ingredient;
                 ingredientsList.appendChild(liElement);
             })
