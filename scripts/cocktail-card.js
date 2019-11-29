@@ -25,6 +25,7 @@ const getCocktailById = (id) => {
             <p>${cocktail.strDrink}</p>
             <p>${cocktail.strGlass}</p>
             <p>${cocktail.strAlcoholic}</p>
+            <p>${cocktail.strCategory}</p>
             <img src="${cocktail.strDrinkThumb}" alt='cocktail picture'>
             `
 
@@ -37,7 +38,7 @@ const getCocktailById = (id) => {
             const instructions = cocktail.strInstructions;
             instructionsContainer.innerHTML = instructions;
 
-        })
+        });
 }
 
 getCocktailById(cocktailId);
